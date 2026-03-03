@@ -5,14 +5,18 @@ const router = express.Router();
 
 router
   .route("/login")
-  .get(userCTRL.login)
+  .get(userCTRL.login);
 
 router
   .route("/callback")
-  .get(userCTRL.callback)
+  .get(userCTRL.callback);
 
 router
   .route("/token")
-  .get(userCTRL.getToken)
+  .get(userCTRL.getToken);
+
+router
+  .route("/refreshToken")
+  .get(userCTRL.getRefreshToken);
 
 export default router;

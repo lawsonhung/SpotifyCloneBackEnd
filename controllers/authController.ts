@@ -29,11 +29,11 @@ const login: RequestHandler = (req, res) => {
 }
 
 let access_token = "";
+const spotifyClientId = process.env.SPOTIFY_CLIENT_ID;
+const spotifyClientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
 const callback: RequestHandler = async (req, res) => {
   const code = req.query.code;
-  const spotifyClientId = process.env.SPOTIFY_CLIENT_ID;
-  const spotifyClientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
   const authOptions = {
     url: 'https://accounts.spotify.com/api/token',
@@ -68,4 +68,31 @@ const getToken: RequestHandler = async (_req, res) => {
   res.json({ access_token: access_token });
 }
 
-export default { login, callback, getToken }
+const getRefreshToken: RequestHandler = async (req, res) => {
+  let refreshToken = req.query.refreshToken;
+  const authOptions = {
+    url: 'https://accounts.spotify.com/api/token',
+    headers: {
+      "Authorization": "Basic " + (Buffer.from(spotifyClientId + ":" + spotifyClientSecret).toString("base64")),
+      "Content-Type": "application/x-www-form-urlencoded",
+    },
+    form: {
+      grant_type: "refresh_token",
+      refresh_token: refreshToken,
+    },
+    json: true,
+  }
+
+  const response = await axios.post(authOptions.url, qs.stringify(authOptions.form), { headers: authOptions.headers });
+
+  if (response.status === 200) {
+    access_token = response.data.access_token;
+    refreshToken = response.data.refresh_token || refreshToken;
+    res.send({
+      "access_token": access_token,
+      "refresh_token": refreshToken,
+    })
+  }
+}
+
+export default { login, callback, getToken, getRefreshToken }
