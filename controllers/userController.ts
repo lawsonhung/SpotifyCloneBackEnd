@@ -1,4 +1,4 @@
-import type { RequestHandler } from "express";
+import { type RequestHandler } from "express";
 import User from "../models/userSchema.js";
 
 const createUser: RequestHandler = async (req, res) => {
