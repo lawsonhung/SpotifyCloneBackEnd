@@ -29,6 +29,7 @@ const login: RequestHandler = (req, res) => {
 }
 
 let access_token = "";
+let refresh_token = "";
 const spotifyClientId = process.env.SPOTIFY_CLIENT_ID;
 const spotifyClientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
@@ -59,17 +60,21 @@ const callback: RequestHandler = async (req, res) => {
   if (response.status === 200) {
     console.log("Response status 200", response.data);
     access_token = response.data.access_token;
+    refresh_token = response.data.refresh_token;
     res.redirect("http://localhost:5173/");
   }
 
 }
 
 const getToken: RequestHandler = async (_req, res) => {
-  res.json({ access_token: access_token });
+  res.json({
+    access_token: access_token,
+    refresh_token: refresh_token,
+  });
 }
 
 const getRefreshToken: RequestHandler = async (req, res) => {
-  let refreshToken = req.query.refreshToken;
+  refresh_token = req.query.refreshToken as string;
   const authOptions = {
     url: 'https://accounts.spotify.com/api/token',
     headers: {
@@ -78,7 +83,7 @@ const getRefreshToken: RequestHandler = async (req, res) => {
     },
     form: {
       grant_type: "refresh_token",
-      refresh_token: refreshToken,
+      refresh_token: refresh_token,
     },
     json: true,
   }
@@ -87,10 +92,10 @@ const getRefreshToken: RequestHandler = async (req, res) => {
 
   if (response.status === 200) {
     access_token = response.data.access_token;
-    refreshToken = response.data.refresh_token || refreshToken;
+    refresh_token = response.data.refresh_token || refresh_token;
     res.send({
       "access_token": access_token,
-      "refresh_token": refreshToken,
+      "refresh_token": refresh_token,
     })
   }
 }
