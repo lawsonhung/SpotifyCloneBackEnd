@@ -13,7 +13,14 @@ const generateRandomString = (length: number) => {
 const login: RequestHandler = (req, res) => {
   const scope = "streaming \
                  user-read-email \
-                 user-read-private"
+                 user-read-private \
+                 user-read-playback-state \
+                 user-modify-playback-state \
+                 user-library-read \
+                 user-library-modify \
+                 playlist-read-private \
+                 playlist-modify-public \
+                 playlist-modify-private"
   const state = generateRandomString(16);
   const spotifyClientId = process.env.SPOTIFY_CLIENT_ID as string;
 
