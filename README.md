@@ -2,9 +2,8 @@
 Server for SpotifyClone  
 [Front End](https://github.com/lawsonhung/SpotifyCloneFrontEnd)  
 
-## Hire me!
+## Hire Me!
 Currently seeking Frontend Software Engineering roles - [LinkedIn](https://www.linkedin.com/in/hirelawson/)
-
 
 ## Getting Started
 
