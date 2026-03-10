@@ -24,14 +24,14 @@ npm run dev
 
 ### Built With
 
-* [![MongoDB][MongoDB]][MongoDB-url]
-* [![Mongoose][Mongoose]][Mongoose-url]
-* [![Express][Express.js]][Express-url]
-* [![Node][Node.js]][Node-url]
-* [![Axios][Axios]][Axios-url]
-* [![TypeScript][TypeScript]][TypeScript-url]
-* [![TS-Node][TS-Node]][TS-Node-url]
-* [![Nodemon][Nodemon]][Nodemon-url]
+[![MongoDB][MongoDB]][MongoDB-url]  
+[![Mongoose][Mongoose]][Mongoose-url]  
+[![Express][Express.js]][Express-url]  
+[![Node][Node.js]][Node-url]  
+[![Axios][Axios]][Axios-url]  
+[![TypeScript][TypeScript]][TypeScript-url]  
+[![TS-Node][TS-Node]][TS-Node-url]  
+[![Nodemon][Nodemon]][Nodemon-url]  
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [MongoDB]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white
