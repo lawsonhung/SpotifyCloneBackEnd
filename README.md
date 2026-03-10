@@ -61,7 +61,7 @@ npm run dev
 <!-- MARKDOWN LINKS & IMAGES -->
 [frontend-shield]:https://img.shields.io/badge/SpotifyClone_FrontEnd-black?style=for-the-badge&logo=spotify&logoColor=1ED760
 [frontend-url]: https://github.com/lawsonhung/SpotifyCloneFrontEnd
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-shield]: https://img.shields.io/badge/linkedin-2a67bc?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/hirelawson/
 [SpotifyRequestToken]: https://img.shields.io/badge/Request_an_Access_Token-black?style=for-the-badge&logo=spotify&logoColor=1ED760
 [SpotifyRequestToken-url]: https://developer.spotify.com/documentation/web-api/tutorials/getting-started#request-an-access-token
