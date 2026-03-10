@@ -1,16 +1,20 @@
 # SpotifyClone Backend
 Server for SpotifyClone  
-[Front End](https://github.com/lawsonhung/SpotifyCloneFrontEnd)  
+[![Frontend-shield][Frontend-shield]][Frontend-url]  
 
 ## Hire Me!
-Currently seeking Frontend Software Engineering roles - [LinkedIn](https://www.linkedin.com/in/hirelawson/)
+Currently seeking Frontend Software Engineering roles  
+[![LinkedIn-shield][LinkedIn-shield]][LinkedIn-url]
 
 ## Getting Started
 
 ### Prerequisites
 
+[![SpotifyRequestToken][SpotifyRequestToken]][SpotifyRequestToken-url]  
+
 You need a Spotify Premium account for the project to work properly and request an access token. Grab the Spotify Client_ID and client secret from your dashboard. You need this to set the `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` in step 3 of Getting Started below.  
-[Spotify Docs - Request an Access Token](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#request-an-access-token)
+
+Make sure you add the `/auth/callback` endpoint to the Redirect URIs in the Spotify dashboard. For example, assuming you're using `PORT 3000`, the URI you would add is `http://127.0.0.1:3000/auth/callback`
 
 ### Installation
 
@@ -55,6 +59,13 @@ npm run dev
 [![Nodemon][Nodemon]][Nodemon-url]  
 
 <!-- MARKDOWN LINKS & IMAGES -->
+[frontend-shield]:https://img.shields.io/badge/SpotifyClone_FrontEnd-black?style=for-the-badge&logo=spotify&logoColor=1ED760
+[frontend-url]: https://github.com/lawsonhung/SpotifyCloneFrontEnd
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
+[linkedin-url]: https://www.linkedin.com/in/hirelawson/
+[SpotifyRequestToken]: https://img.shields.io/badge/Request_an_Access_Token-black?style=for-the-badge&logo=spotify&logoColor=1ED760
+[SpotifyRequestToken-url]: https://developer.spotify.com/documentation/web-api/tutorials/getting-started#request-an-access-token
+
 [MongoDB]: https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white
 [MongoDB-url]: https://www.mongodb.com/
 [Mongoose]: https://img.shields.io/badge/mongoose-23880000?style=for-the-badge&logo=mongoose&logoColor=%white
