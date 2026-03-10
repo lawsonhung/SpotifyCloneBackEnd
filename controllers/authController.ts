@@ -11,6 +11,7 @@ const generateRandomString = (length: number) => {
 }
 
 const login: RequestHandler = (req, res) => {
+  // user-read-playback-position \
   const scope = "streaming \
                  user-read-email \
                  user-read-private \
@@ -18,6 +19,7 @@ const login: RequestHandler = (req, res) => {
                  user-modify-playback-state \
                  user-library-read \
                  user-library-modify \
+                 user-top-read \
                  playlist-read-private \
                  playlist-modify-public \
                  playlist-modify-private"
