@@ -2,6 +2,26 @@
 Server for SpotifyClone  
 [Front End](https://github.com/lawsonhung/SpotifyCloneFrontEnd)
 
+## Getting Started
+To get a local copy up and running
+
+1. Clone the repo
+```sh
+git clone https://github.com/lawsonhung/SpotifyCloneBackEnd.git
+```
+2. Install NPM packages
+```sh
+npm i
+```
+3. Compile TypeScript
+```sh
+npx tsc
+```
+4. Run the project `dev` command
+```sh
+npm run dev
+```
+
 ### Built With
 
 * [![MongoDB][MongoDB]][MongoDB-url]
