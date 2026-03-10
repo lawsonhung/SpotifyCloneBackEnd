@@ -1,8 +1,20 @@
 # SpotifyClone Backend
 Server for SpotifyClone  
-[Front End](https://github.com/lawsonhung/SpotifyCloneFrontEnd)
+[Front End](https://github.com/lawsonhung/SpotifyCloneFrontEnd)  
+
+## Hire me!
+Currently seeking Frontend Software Engineering roles [LinkedIn](https://www.linkedin.com/in/hirelawson/)
+
 
 ## Getting Started
+
+### Prerequisites
+
+You need a Spotify Premium account for the project to work properly and request an access token. Grab the Spotify Client_ID and client secret from your dashboard. You need this to set the `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` in step 3 of Getting Started below.  
+[Spotify Docs - Request an Access Token](https://developer.spotify.com/documentation/web-api/tutorials/getting-started#request-an-access-token)
+
+### Installation
+
 To get a local copy up and running
 
 1. Clone the repo
@@ -13,11 +25,21 @@ git clone https://github.com/lawsonhung/SpotifyCloneBackEnd.git
 ```sh
 npm i
 ```
-3. Compile TypeScript
+3. Create a `.env` in the root directory and set the `PORT` and `MONGO_URI`. Your `SPOTIFY_CLIENT_ID` and `SPOTIFY_CLIENT_SECRET` goes here as well
+```sh
+touch .env
+```
+```
+PORT=PORT_GOES_HERE
+MONGO_URI=YOUR_MONGODB_URI_HERE
+SPOTIFY_CLIENT_ID=YOUR_CLIENT_ID_HERE
+SPOTIFY_CLIENT_SECRET=YOUR_SECRET_HERE
+```
+4. Compile TypeScript
 ```sh
 npx tsc
 ```
-4. Run the project `dev` command
+5. Run the project `dev` command
 ```sh
 npm run dev
 ```
