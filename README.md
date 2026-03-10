@@ -14,7 +14,7 @@ You need a Spotify Premium account for the project to work properly and request 
 
 ### Installation
 
-To get a local copy up and running
+How to get a local copy up and running
 
 1. Clone the repo
 ```sh
