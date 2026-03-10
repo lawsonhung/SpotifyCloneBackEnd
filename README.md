@@ -7,5 +7,5 @@ Server for SpotifyClone
 * [![Express][Express.js]][Express-url]
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[Express.js](https://img.shields.io/badge/:badgeContent?label=express&color=black)
-[Express-url](https://expressjs.com/)
+[Express.js]: https://img.shields.io/badge/:badgeContent?label=express&color=black
+[Express-url]: https://expressjs.com/
