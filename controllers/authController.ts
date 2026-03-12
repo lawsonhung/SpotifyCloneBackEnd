@@ -31,7 +31,7 @@ const login: RequestHandler = (req, res) => {
     response_type: "code",
     client_id: spotifyClientId,
     scope: scope,
-    redirect_uri: "http://127.0.0.1:3000/api/auth/callback",
+    redirect_uri: "https://spotifyclonebackend-3uiw.onrender.com/api/auth/callback",
     state: state,
   })
 
