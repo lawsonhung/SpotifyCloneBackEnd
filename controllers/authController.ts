@@ -60,6 +60,8 @@ const callback: RequestHandler = async (req, res) => {
     json: true,
   };
 
+  console.log("authOptions", authOptions);
+
   const response = await axios.post(authOptions.url, qs.stringify(authOptions.form), {
     headers: {
       "Authorization": "Basic " + (Buffer.from(spotifyClientId + ":" + spotifyClientSecret).toString("base64")),
