@@ -2,6 +2,12 @@ import { type RequestHandler } from "express";
 import axios from "axios";
 import qs from "qs";
 
+let access_token = "";
+let refresh_token = "";
+const spotifyClientId = process.env.SPOTIFY_CLIENT_ID;
+const spotifyClientSecret = process.env.SPOTIFY_CLIENT_SECRET;
+const redirect_uri = "https://spotifyclonebackend-3uiw.onrender.com/api/auth/callback"
+
 const generateRandomString = (length: number) => {
   let text = "";
   let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
@@ -31,17 +37,12 @@ const login: RequestHandler = (req, res) => {
     response_type: "code",
     client_id: spotifyClientId,
     scope: scope,
-    redirect_uri: "https://spotifyclonebackend-3uiw.onrender.com/api/auth/callback",
+    redirect_uri: redirect_uri,
     state: state,
   })
 
   res.redirect('https://accounts.spotify.com/authorize/?' + auth_query_parameters.toString());
 }
-
-let access_token = "";
-let refresh_token = "";
-const spotifyClientId = process.env.SPOTIFY_CLIENT_ID;
-const spotifyClientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 
 const callback: RequestHandler = async (req, res) => {
   const code = req.query.code;
@@ -50,7 +51,7 @@ const callback: RequestHandler = async (req, res) => {
     url: 'https://accounts.spotify.com/api/token',
     form: {
       code: code,
-      redirect_uri: "https://spotifyclonebackend-3uiw.onrender.com/api/auth/callback",
+      redirect_uri: redirect_uri,
       grant_type: "authorization_code",
     },
     headers: {
@@ -59,8 +60,6 @@ const callback: RequestHandler = async (req, res) => {
     },
     json: true,
   };
-
-  console.log("authOptions", authOptions);
 
   const response = await axios.post(authOptions.url, qs.stringify(authOptions.form), {
     headers: {
